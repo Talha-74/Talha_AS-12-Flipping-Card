@@ -1,0 +1,57 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+}
+
+.card {
+    height: 340px;
+    width: 250px;
+    position: relative;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+
+}
+
+.front, .back {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    border-radius: 10px;
+    position: absolute;
+    color: white;
+    font-weight: lighter;
+}
+
+.front {
+    background-image: url(./2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 2; 
+    backface-visibility: hidden;
+    
+}
+.back {
+    background-image: url(./1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    transform: rotateY(180deg); 
+    
+}
+
+.container:hover .card{
+    transform: rotateY(180deg);
+}
+
+/* Adding the 3D effect */
+.container {
+    perspective: 1000px;
+}
